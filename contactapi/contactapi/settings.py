@@ -12,6 +12,12 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from datetime import timedelta
 from pathlib import Path
 import django_heroku
+import os
+
+
+SECRET_KEY = os.getenv('SECRET_KEY', 'havemyself')  # Using the SECRET_KEY variable from the environment
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
