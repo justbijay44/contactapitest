@@ -1,3 +1,3 @@
 release: python manage.py makemigrations --no-input && python manage.py migrate --no-input
 
-web : guincorn contactapi.wsgi --log-file -
+web: gunicorn contactapi.wsgi
